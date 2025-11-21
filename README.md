@@ -56,7 +56,7 @@ curl -LsSf https://astral.sh/uv/install.sh | sh && export PATH="$HOME/.local/bin
 
 **Start Command:**
 ```bash
-.venv/bin/uvicorn main:app --host 0.0.0.0 --port $PORT
+.venv/bin/python -m uvicorn main:app --host 0.0.0.0 --port $PORT
 ```
 
 **또는 더 간단한 방법 (--system 플래그 사용):**
