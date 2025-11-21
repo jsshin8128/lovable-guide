@@ -2,7 +2,7 @@
 
 FastAPI 기반의 할 일 우선순위 자동 분류 API입니다. Naive Bayes 머신러닝 모델을 사용하여 할 일 텍스트를 분석하고 우선순위를 자동으로 분류합니다.
 
-## 🚀 로컬 실행 방법
+## 로컬 실행 방법
 
 ### 1. uv 설치 (최초 1회만)
 
@@ -12,40 +12,22 @@ FastAPI 기반의 할 일 우선순위 자동 분류 API입니다. Naive Bayes �
 curl -LsSf https://astral.sh/uv/install.sh | sh
 ```
 
-**Windows:**
-
-```powershell
-powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
-```
-
 설치 후 터미널을 재시작하거나 `source ~/.bashrc` (Linux)를 실행하세요.
 
 ### 2. 의존성 설치 및 서버 실행
 
-**방법 1: uv로 직접 실행 (권장)**
+**uv로 실행**
 
 ```bash
 uv pip install -r requirements.txt
 uv run uvicorn main:app --reload
 ```
 
-**방법 2: 가상환경 생성 후 사용**
-
-```bash
-uv venv
-source .venv/bin/activate  # Linux/Mac
-# 또는
-.venv\Scripts\activate  # Windows
-
-uv pip install -r requirements.txt
-uvicorn main:app --reload
-```
-
 서버가 실행되면 `http://localhost:8000`에서 API를 사용할 수 있습니다.
 
 API 문서는 `http://localhost:8000/docs`에서 확인할 수 있습니다.
 
-## 📦 Render 배포 방법
+## Render 배포 방법
 
 ### 1. GitHub 저장소에 코드 푸시
 
@@ -69,7 +51,7 @@ git push -u origin main
 
 **Build Command:**
 ```bash
-curl -LsSf https://astral.sh/uv/install.sh | sh && export PATH="$HOME/.cargo/bin:$PATH" && uv venv && source .venv/bin/activate && uv pip install -r requirements.txt
+curl -LsSf https://astral.sh/uv/install.sh | sh && export PATH="$HOME/.local/bin:$PATH" && rm -rf .venv && uv venv && source .venv/bin/activate && uv pip install -r requirements.txt
 ```
 
 **Start Command:**
@@ -81,7 +63,7 @@ source .venv/bin/activate && uvicorn main:app --host 0.0.0.0 --port $PORT
 
 **Build Command:**
 ```bash
-curl -LsSf https://astral.sh/uv/install.sh | sh && export PATH="$HOME/.cargo/bin:$PATH" && uv pip install --system -r requirements.txt
+curl -LsSf https://astral.sh/uv/install.sh | sh && export PATH="$HOME/.local/bin:$PATH" && uv pip install --system -r requirements.txt
 ```
 
 **Start Command:**
