@@ -51,15 +51,15 @@ git push -u origin main
 
 **Build Command:**
 ```bash
-curl -LsSf https://astral.sh/uv/install.sh | sh && export PATH="$HOME/.local/bin:$PATH" && rm -rf .venv && $HOME/.local/bin/uv venv && source .venv/bin/activate && $HOME/.local/bin/uv pip install -r requirements.txt
+curl -LsSf https://astral.sh/uv/install.sh | sh && export PATH="$HOME/.local/bin:$PATH" && $HOME/.local/bin/uv pip install --system -r requirements.txt
 ```
 
 **Start Command:**
 ```bash
-.venv/bin/python -m uvicorn main:app --host 0.0.0.0 --port $PORT
+python -m uvicorn main:app --host 0.0.0.0 --port $PORT
 ```
 
-**참고:** Render에서는 빌드와 배포가 같은 프로젝트 디렉토리에서 실행되므로, 프로젝트 루트의 `.venv`를 사용합니다.
+**참고:** `--system` 플래그를 사용하여 가상환경 없이 시스템 Python에 직접 설치합니다. Render 환경에서는 이 방법이 더 간단하고 안정적입니다.
 
 ### 3. 환경 변수
 
