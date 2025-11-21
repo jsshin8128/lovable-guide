@@ -59,17 +59,7 @@ curl -LsSf https://astral.sh/uv/install.sh | sh && export PATH="$HOME/.local/bin
 .venv/bin/python -m uvicorn main:app --host 0.0.0.0 --port $PORT
 ```
 
-**또는 더 간단한 방법 (--system 플래그 사용):**
-
-**Build Command:**
-```bash
-curl -LsSf https://astral.sh/uv/install.sh | sh && export PATH="$HOME/.local/bin:$PATH" && uv pip install --system -r requirements.txt
-```
-
-**Start Command:**
-```bash
-uvicorn main:app --host 0.0.0.0 --port $PORT
-```
+**참고:** Render에서는 빌드와 배포가 같은 프로젝트 디렉토리에서 실행되므로, 프로젝트 루트의 `.venv`를 사용합니다.
 
 ### 3. 환경 변수
 
