@@ -51,7 +51,7 @@ git push -u origin main
 
 **Build Command:**
 ```bash
-curl -LsSf https://astral.sh/uv/install.sh | sh && export PATH="$HOME/.local/bin:$PATH" && rm -rf .venv && uv venv && source .venv/bin/activate && uv pip install -r requirements.txt
+curl -LsSf https://astral.sh/uv/install.sh | sh && source $HOME/.local/bin/env && rm -rf .venv && uv venv && source .venv/bin/activate && uv pip install -r requirements.txt
 ```
 
 **Start Command:**
