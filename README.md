@@ -51,7 +51,7 @@ git push -u origin main
 
 **Build Command:**
 ```bash
-curl -LsSf https://astral.sh/uv/install.sh | sh && source $HOME/.local/bin/env && rm -rf .venv && uv venv && source .venv/bin/activate && uv pip install -r requirements.txt
+curl -LsSf https://astral.sh/uv/install.sh | sh && export PATH="$HOME/.local/bin:$PATH" && rm -rf .venv && $HOME/.local/bin/uv venv && source .venv/bin/activate && $HOME/.local/bin/uv pip install -r requirements.txt
 ```
 
 **Start Command:**
@@ -81,7 +81,7 @@ uvicorn main:app --host 0.0.0.0 --port $PORT
 
 예: `https://your-app-name.onrender.com/priority`
 
-## 📡 API 사용법
+## API 사용법
 
 ### 엔드포인트
 
@@ -124,7 +124,7 @@ response = requests.post(url, json=data)
 print(response.json())  # {"priority": "high"}
 ```
 
-## 🧠 우선순위 분류
+## 우선순위 분류
 
 API는 Naive Bayes 머신러닝 모델을 사용하여 할 일 텍스트를 다음 세 가지 우선순위로 분류합니다:
 
@@ -132,7 +132,7 @@ API는 Naive Bayes 머신러닝 모델을 사용하여 할 일 텍스트를 다�
 - **medium**: 중간 우선순위 (예: 세탁, 방 청소)
 - **low**: 낮은 우선순위 (예: 유튜브 보기, 넷플릭스 보기)
 
-## 📁 프로젝트 구조
+## 프로젝트 구조
 
 ```
 .
@@ -142,10 +142,10 @@ API는 Naive Bayes 머신러닝 모델을 사용하여 할 일 텍스트를 다�
 └── README.md           # 프로젝트 문서
 ```
 
-## 🔧 기술 스택
+## 기술 스택
 
-- **FastAPI**: 고성능 웹 프레임워크
+- **FastAPI**: 프레임워크
 - **scikit-learn**: 머신러닝 라이브러리
 - **uvicorn**: ASGI 서버
-- **uv**: 초고속 Python 패키지 매니저 (Rust 기반)
+- **uv**: 패키지 매니저
 
