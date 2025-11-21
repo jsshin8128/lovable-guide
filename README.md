@@ -56,7 +56,7 @@ curl -LsSf https://astral.sh/uv/install.sh | sh && export PATH="$HOME/.local/bin
 
 **Start Command:**
 ```bash
-python -m uvicorn main:app --host 0.0.0.0 --port $PORT
+python3 -m uvicorn main:app --host 0.0.0.0 --port $PORT
 ```
 
 **참고:** `--system` 플래그를 사용하여 가상환경 없이 시스템 Python에 직접 설치합니다. Render 환경에서는 이 방법이 더 간단하고 안정적입니다.
